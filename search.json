@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "escalada_paraguay.html",
+    "href": "escalada_paraguay.html",
+    "title": "escalada_paraguay",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "guia.html",
+    "href": "guia.html",
+    "title": "Guía Interactiva",
+    "section": "",
+    "text": "Explorá las vías de escalada deportiva en Paraguay a través del mapa interactivo y la tabla filtrable. Podés buscar por nombre, dificultad, altura o zona.\n\n\n# Cargar librerías\nlibrary(sf)\nlibrary(dplyr)\nlibrary(leaflet)\nlibrary(reactable)\n\n# Leer shapefile (colocarlo en la carpeta \"data\")\nvias <- st_read(\"data/vias_escalada.shp\")\n\nReading layer `vias_escalada' from data source \n  `D:\\Hendata\\46_estalada\\escalada_paraguay\\data\\vias_escalada.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 26 features and 9 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -57.09315 ymin: -25.28672 xmax: -57.09051 ymax: -25.28489\nGeodetic CRS:  WGS 84\n\n# Extraer latitud y longitud para Leaflet\nvias <- vias %>%\n  mutate(\n    lon = st_coordinates(geometry)[,1],\n    lat = st_coordinates(geometry)[,2]\n  )\n\n📊 Tabla de Vías Filtrable"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Club",
+    "section": "",
+    "text": "Individuales\n\n\n\nModalidad\nTipo de miembro\nCuota mensual\n\n\n\n\nMuro libre\nNo socio\nGs. 240.000\n\n\nMuro libre\nSocios\nGs. 100.000\n\n\nPase dario\nNo socios\nGs. 55.000\n\n\nPase diario\nsocios\nGs. 100.000\n\n\nMembresia socio\nCuota social anual\nGs. 300.000\n\n\n\n\n\nPaquetes\n\n\n\nClases\nDías\nCosto\n\n\n\n\n12\nMartes, jueves y sabado\nGs. 360.000\n\n\n8\nMartes, jueves\nGs. 240.000\n\n\n4\nSabado\nGs. 120.000\n\n\n1\npor día\nGs. 65.000"
+  }
+]
