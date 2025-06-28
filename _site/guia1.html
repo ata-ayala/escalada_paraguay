@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Club de Escalada Asunción - Club</title>
+<title>Club de Escalada Asunción - Guía Interactiva</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ ul.task-list{list-style: none;}
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">Inicio</a>
+    <a class="nav-link" href="./index.html">Inicio</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./guia.html">Guía Interactiva</a>
@@ -98,14 +98,15 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quiénes-somos" id="toc-quiénes-somos" class="nav-link active" data-scroll-target="#quiénes-somos">🧑‍🤝‍🧑 Quiénes Somos</a>
+  <li><a href="#guía-de-escalada-deportiva-en-paraguay" id="toc-guía-de-escalada-deportiva-en-paraguay" class="nav-link active" data-scroll-target="#guía-de-escalada-deportiva-en-paraguay">🧗 Guía de Escalada Deportiva en Paraguay</a>
   <ul class="collapse">
-  <li><a href="#reglas-del-club" id="toc-reglas-del-club" class="nav-link" data-scroll-target="#reglas-del-club">🧾 Reglas del Club</a></li>
-  <li><a href="#horarios" id="toc-horarios" class="nav-link" data-scroll-target="#horarios">🕒 Horarios</a></li>
-  <li><a href="#tarifas" id="toc-tarifas" class="nav-link" data-scroll-target="#tarifas">💰 Tarifas</a></li>
+  <li><a href="#cargar-shapefile-crear-mapa-tabla-y-exportar-csv-r" id="toc-cargar-shapefile-crear-mapa-tabla-y-exportar-csv-r" class="nav-link" data-scroll-target="#cargar-shapefile-crear-mapa-tabla-y-exportar-csv-r">🔁 Cargar shapefile, crear mapa, tabla y exportar CSV (R)</a></li>
   </ul></li>
-  <li><a href="#individuales" id="toc-individuales" class="nav-link" data-scroll-target="#individuales">Individuales</a></li>
-  <li><a href="#paquetes" id="toc-paquetes" class="nav-link" data-scroll-target="#paquetes">Paquetes</a></li>
+  <li><a href="#leer-shapefile" id="toc-leer-shapefile" class="nav-link" data-scroll-target="#leer-shapefile">Leer shapefile</a></li>
+  <li><a href="#extraer-coordenadas" id="toc-extraer-coordenadas" class="nav-link" data-scroll-target="#extraer-coordenadas">Extraer coordenadas</a></li>
+  <li><a href="#guardar-como-csv-para-python" id="toc-guardar-como-csv-para-python" class="nav-link" data-scroll-target="#guardar-como-csv-para-python">Guardar como CSV para Python</a></li>
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
+  <li><a href="#gráfico-de-barras-cantidad-de-vías-por-dificultad" id="toc-gráfico-de-barras-cantidad-de-vías-por-dificultad" class="nav-link" data-scroll-target="#gráfico-de-barras-cantidad-de-vías-por-dificultad">Gráfico de barras (cantidad de vías por dificultad)</a></li>
   </ul>
 </nav>
     </div>
@@ -114,7 +115,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Club</h1>
+<h1 class="title">Guía Interactiva</h1>
 </div>
 
 
@@ -128,137 +129,78 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="quiénes-somos" class="level1">
-<h1>🧑‍🤝‍🧑 Quiénes Somos</h1>
-<p>Somos una comunidad de escaladores y senderistas que promueve el deporte en armonía con la naturaleza.</p>
-<section id="reglas-del-club" class="level2">
-<h2 class="anchored" data-anchor-id="reglas-del-club">🧾 Reglas del Club</h2>
-<ul>
-<li>Uso obligatorio de casco en todos los sectores.</li>
-<li>Respetar el entorno natural y no dejar basura.</li>
-<li>Mantener el respeto y la convivencia entre escaladores.</li>
-</ul>
-</section>
-<section id="horarios" class="level2">
-<h2 class="anchored" data-anchor-id="horarios">🕒 Horarios</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Días</th>
-<th>Horarios</th>
-<th>Modalidad</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Lunes</td>
-<td>18:00 a 22:00</td>
-<td>Muro libre</td>
-</tr>
-<tr class="even">
-<td>Martes</td>
-<td>18:00 a 20:00</td>
-<td>Clases de escalada</td>
-</tr>
-<tr class="odd">
-<td>Miercoles</td>
-<td>18:00 a 22:00</td>
-<td>Muro libre</td>
-</tr>
-<tr class="even">
-<td>Jueves</td>
-<td>18:00 a 20:00</td>
-<td>Clases de escalada</td>
-</tr>
-<tr class="odd">
-<td>Viernes</td>
-<td>18:00 a 22:00</td>
-<td>Muro libre</td>
-</tr>
-<tr class="even">
-<td>Sabado</td>
-<td>16:00 a 18:00</td>
-<td>Clases de iniciación a la escalada</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="tarifas" class="level2">
-<h2 class="anchored" data-anchor-id="tarifas">💰 Tarifas</h2>
+<section id="guía-de-escalada-deportiva-en-paraguay" class="level1">
+<h1>🧗 Guía de Escalada Deportiva en Paraguay</h1>
+<p>Explorá las vías de escalada deportiva en Paraguay a través del mapa interactivo, una tabla filtrable y gráficos dinámicos.</p>
+<hr>
+<section id="cargar-shapefile-crear-mapa-tabla-y-exportar-csv-r" class="level2">
+<h2 class="anchored" data-anchor-id="cargar-shapefile-crear-mapa-tabla-y-exportar-csv-r">🔁 Cargar shapefile, crear mapa, tabla y exportar CSV (R)</h2>
+<p>```{r cargar-datos, message=FALSE, warning=FALSE} library(sf) library(dplyr) library(leaflet) library(reactable)</p>
 </section>
 </section>
-<section id="individuales" class="level1">
-<h1>Individuales</h1>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Modalidad</th>
-<th>Tipo de miembro</th>
-<th>Cuota mensual</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Muro libre</td>
-<td>No socio</td>
-<td>Gs. 240.000</td>
-</tr>
-<tr class="even">
-<td>Muro libre</td>
-<td>Socios</td>
-<td>Gs. 100.000</td>
-</tr>
-<tr class="odd">
-<td>Pase dario</td>
-<td>No socios</td>
-<td>Gs. 55.000</td>
-</tr>
-<tr class="even">
-<td>Pase diario</td>
-<td>socios</td>
-<td>Gs. 100.000</td>
-</tr>
-<tr class="odd">
-<td>Membresia socio</td>
-<td>Cuota social anual</td>
-<td>Gs. 300.000</td>
-</tr>
-</tbody>
-</table>
+<section id="leer-shapefile" class="level1">
+<h1>Leer shapefile</h1>
+<p>vias &lt;- st_read(“data/vias_escalada.shp”, quiet = TRUE)</p>
 </section>
-<section id="paquetes" class="level1">
-<h1>Paquetes</h1>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Clases</th>
-<th>Días</th>
-<th>Costo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>12</td>
-<td>Martes, jueves y sabado</td>
-<td>Gs. 360.000</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Martes, jueves</td>
-<td>Gs. 240.000</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>Sabado</td>
-<td>Gs. 120.000</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>por día</td>
-<td>Gs. 65.000</td>
-</tr>
-</tbody>
-</table>
+<section id="extraer-coordenadas" class="level1">
+<h1>Extraer coordenadas</h1>
+<p>vias &lt;- vias %&gt;% mutate( lon = st_coordinates(geometry)[, 1], lat = st_coordinates(geometry)[, 2] )</p>
+</section>
+<section id="guardar-como-csv-para-python" class="level1">
+<h1>Guardar como CSV para Python</h1>
+<p>vias %&gt;% st_drop_geometry() %&gt;% write.csv(“data/vias_python.csv”, row.names = FALSE)</p>
+<pre><code>
+
+
+🗺️ Mapa Interactivo de Vías (R)
+
+
+
+```{r}
+leaflet(vias) %&gt;%
+  addProviderTiles(providers$Esri.WorldImagery) %&gt;%
+  addCircleMarkers(
+    ~lon, ~lat,
+    label = ~Nombre,
+    popup = ~paste(
+      "&lt;b&gt;Vía:&lt;/b&gt;", Nombre, "&lt;br&gt;",
+      "&lt;b&gt;Grado:&lt;/b&gt;", Grad_USA, " / ", Grad_F, "&lt;br&gt;",
+      "&lt;b&gt;Altura:&lt;/b&gt;", Altura_m, "m&lt;br&gt;",
+      "&lt;b&gt;Zona:&lt;/b&gt;", Zona, "&lt;br&gt;",
+      "&lt;b&gt;Sector:&lt;/b&gt;", Sector
+    ),
+    radius = 6,
+    color = "#e41a1c",
+    stroke = FALSE,
+    fillOpacity = 0.8
+  )
+</code></pre>
+<p>📊 Tabla Filtrable de Vías (R)</p>
+<pre class="{r}"><code>reactable(
+  vias %&gt;%
+    st_drop_geometry() %&gt;%
+    select(Nombre, Grad_USA, Grad_F, Altura_m, Zona, Sector),
+  filterable = TRUE,
+  searchable = TRUE,
+  pagination = TRUE,
+  defaultPageSize = 20,
+  striped = TRUE,
+  highlight = TRUE,
+  bordered = TRUE
+)
+</code></pre>
+<p>📈 Gráfico Interactivo por Dificultad (Python)</p>
+<p>```{r, echo=FALSE}</p>
+<p>library(dplyr) library(plotly) library(htmltools)</p>
+</section>
+<section id="datos" class="level1">
+<h1>Datos</h1>
+<p>vias &lt;- st_read(“data/vias_escalada.shp”, quiet = TRUE) %&gt;% st_drop_geometry()</p>
+</section>
+<section id="gráfico-de-barras-cantidad-de-vías-por-dificultad" class="level1">
+<h1>Gráfico de barras (cantidad de vías por dificultad)</h1>
+<p>plot_ly( vias %&gt;% group_by(Grad_F) %&gt;% summarise(Vias = n()), x = ~Grad_F, y = ~Vias, type = “bar”, marker = list(color = ~Vias, colorscale = “YlOrRd”) ) %&gt;% layout(title = “Cantidad de vías por dificultad (Grad_F)”)</p>
+<p>```</p>
 
 
 </section>
