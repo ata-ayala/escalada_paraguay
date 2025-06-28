@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "guia.html",
+    "href": "guia.html",
+    "title": "Guía Interactiva",
+    "section": "",
+    "text": "Explorá las vías de escalada deportiva en Paraguay a través del mapa interactivo, una tabla filtrable y gráficos dinámicos.\n\n\n\n\n\n\n\n\n\n📊 Tabla Filtrable de Vías (R)"
+  },
+  {
+    "objectID": "guia1.html",
+    "href": "guia1.html",
+    "title": "Guía Interactiva",
+    "section": "",
+    "text": "Leer shapefile\nvias <- st_read(“data/vias_escalada.shp”, quiet = TRUE)\n\n\nExtraer coordenadas\nvias <- vias %>% mutate( lon = st_coordinates(geometry)[, 1], lat = st_coordinates(geometry)[, 2] )\n\n\nGuardar como CSV para Python\nvias %>% st_drop_geometry() %>% write.csv(“data/vias_python.csv”, row.names = FALSE)\n\n\n\n🗺️ Mapa Interactivo de Vías (R)\n\n\n\n```{r}\nleaflet(vias) %>%\n  addProviderTiles(providers$Esri.WorldImagery) %>%\n  addCircleMarkers(\n    ~lon, ~lat,\n    label = ~Nombre,\n    popup = ~paste(\n      \"<b>Vía:</b>\", Nombre, \"<br>\",\n      \"<b>Grado:</b>\", Grad_USA, \" / \", Grad_F, \"<br>\",\n      \"<b>Altura:</b>\", Altura_m, \"m<br>\",\n      \"<b>Zona:</b>\", Zona, \"<br>\",\n      \"<b>Sector:</b>\", Sector\n    ),\n    radius = 6,\n    color = \"#e41a1c\",\n    stroke = FALSE,\n    fillOpacity = 0.8\n  )\n\n📊 Tabla Filtrable de Vías (R)\nreactable(\n  vias %>%\n    st_drop_geometry() %>%\n    select(Nombre, Grad_USA, Grad_F, Altura_m, Zona, Sector),\n  filterable = TRUE,\n  searchable = TRUE,\n  pagination = TRUE,\n  defaultPageSize = 20,\n  striped = TRUE,\n  highlight = TRUE,\n  bordered = TRUE\n)\n\n📈 Gráfico Interactivo por Dificultad (Python)\n```{r, echo=FALSE}\nlibrary(dplyr) library(plotly) library(htmltools)\n\n\nDatos\nvias <- st_read(“data/vias_escalada.shp”, quiet = TRUE) %>% st_drop_geometry()\n\n\nGráfico de barras (cantidad de vías por dificultad)\nplot_ly( vias %>% group_by(Grad_F) %>% summarise(Vias = n()), x = ~Grad_F, y = ~Vias, type = “bar”, marker = list(color = ~Vias, colorscale = “YlOrRd”) ) %>% layout(title = “Cantidad de vías por dificultad (Grad_F)”)\n```"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Club",
+    "section": "",
+    "text": "Individuales\n\n\n\nModalidad\nTipo de miembro\nCuota mensual\n\n\n\n\nMuro libre\nNo socio\nGs. 240.000\n\n\nMuro libre\nSocios\nGs. 100.000\n\n\nPase dario\nNo socios\nGs. 55.000\n\n\nPase diario\nsocios\nGs. 100.000\n\n\nMembresia socio\nCuota social anual\nGs. 300.000\n\n\n\n\n\nPaquetes\n\n\n\nClases\nDías\nCosto\n\n\n\n\n12\nMartes, jueves y sabado\nGs. 360.000\n\n\n8\nMartes, jueves\nGs. 240.000\n\n\n4\nSabado\nGs. 120.000\n\n\n1\npor día\nGs. 65.000"
+  }
+]
